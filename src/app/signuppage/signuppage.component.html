@@ -1,0 +1,87 @@
+<html>
+    <head>
+        <style>
+            *{
+                margin:0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            body{
+                background-color: teal;
+                color: white;
+            }
+            .hell{
+                display:flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                height: 75vh; 
+            }
+            form{
+                text-align: center;
+                color: white;
+                padding-top: 100px;
+            }
+            input{
+                display: block;
+                border-bottom: 1px solid rgb(138, 134, 134);
+                outline: none;
+                font-size: 20px;
+                
+            }
+            button{
+                font-size: 20px;
+                border: none;
+                width: 100px;
+            }
+            input.ng-invalid.ng-dirty {
+                border-bottom-color: red !important;
+                box-shadow: 0 1px 0 0 red !important;
+            }.example-container .mat-form-field + .mat-form-field {
+  margin-left: 8px;
+}
+
+.example-right-align {
+  text-align: right;
+}
+
+input.example-right-align::-webkit-outer-spin-button,
+input.example-right-align::-webkit-inner-spin-button {
+  display: none;
+}
+
+input.example-right-align {
+  -moz-appearance: textfield;
+}
+        </style>
+    </head>
+    <body>
+        
+        <button type="button" class="btn btn-primary" style="width: 75px;font-size:15px;border-radius:10px;margin: 20px;float:right;" (click)="login()">Sign In</button>
+
+        <button type="button" class="btn btn-primary" style="width: 75px;font-size:15px;border-radius:10px;margin: 20px;margin-right:0px;float:right;" (click)="signUp4()">Sign Up</button>
+        <div class="hell">
+        <form #myForm="ngForm">
+            <div class="example-container" >
+                <mat-form-field appearance="fill" style="width:240px;">
+                  <mat-label style="color: #FFFFFF;font-size: large;">Enter your username</mat-label>
+                  <input matInput id="user.UserName" required [(ngModel)] = "user.UserName" name="user.UserName">
+                <!--  <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>-->
+                </mat-form-field>
+              </div><BR>
+              <mat-form-field appearance="fill">
+                <mat-label style="color: white;font-size: large;">Enter your password</mat-label>
+                <input matInput [type]="hide ? 'password' : 'text'" required [(ngModel)] = "user.Password" name="user.Password" minlength="6">
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                  <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+              </mat-form-field>
+           <!-- <input type="password" name="" placeholder="Password" required [(ngModel)] = "user.Password" name="user.Password">
+            <input type="password" name="" placeholder="Confirm Password" required [(ngModel)] = "conformpassword" name="conformpassword"><br>-->
+            <div style="padding-top: 20px;"></div>
+            <button type="submit" class="btn btn-primary"  [disabled]="!myForm.form.valid" (click)="signup()">Submit</button>
+            
+        </form>
+        </div>
+    </body>
+</html>

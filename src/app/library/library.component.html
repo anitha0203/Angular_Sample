@@ -1,0 +1,41 @@
+<ul class="nav">
+    <li class="nav-item">
+      <a class="nav-link active" aria-current="page">Books_List</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/addbooks">Add_Books</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/addstudentdetails">Add_Student</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/tookbook">Take_Book</a>
+    </li>
+  </ul>
+
+
+<div class="container" style="margin-top:100px;">
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>ISBN_Code</th>
+                <th>Book_Title</th>
+                <th>Language</th>
+                <th>No_Copies_Actual</th>
+                <th>No_Copies_Current</th>
+                <th>Publication_year</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of users">
+                <td>{{user.ISBN_Code}}</td>
+                <td>{{user.Book_Title}}</td>
+                <td>{{user.Language}}</td>
+                <td>{{user.No_Copies_Actual}}</td>
+                <td>{{user.No_Copies_Current}}</td>
+                <td>{{user.Publication_year}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+

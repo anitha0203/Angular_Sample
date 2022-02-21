@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <style>
+            *{
+                margin:0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            body{
+                background-color: blueviolet;
+            }
+            form{
+                text-align: center;              
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                padding-top: 250px;
+               
+            }
+            </style>
+            </head>
+<body>
+    <button type="button" class="btn btn-primary btn-lg" style="font-size:15px;padding:8px;border-radius:10px;margin: 20px;float:right;" (click)="login()">Sign In</button>
+
+<button type="button" class="btn btn-primary btn-lg" style="font-size:15px;padding: 8px;border-radius:10px;margin: 20px;margin-right:0px;float:right;" (click)="signUp()">Sign Up</button>
+
+
+    <form #myForm="ngForm" fxLayoutAlign="center center" >
+        <mat-card fxFlex="25" style="padding-top:40px;">
+            <mat-toolbar color="primary" style="padding:10px 19%;">Login Page</mat-toolbar>
+          <div fxLayoutAlign="stretch" fxLayout="column" style="font-size: 18px;"><br>
+            <mat-form-field style="text-align:center;">Username : 
+            <input type='text' required name='username' [(ngModel)]='username'></mat-form-field>    
+            <mat-form-field style="text-align:center;">Password : 
+            <input type="password" required name="password" [(ngModel)]="password"></mat-form-field>
+            <h2>{{mess}}</h2>
+
+        <mat-form-field style="text-align:center;">
+            <button type="button" class="btn btn-primary" style="padding: 7px 15px;letter-spacing: 1px;" [disabled]="!myForm.form.valid" (click)="loginUser('sample')">
+                Login
+            </button>
+    
+        </mat-form-field>
+        </div>
+        </mat-card>
+    </form>
+</body>
+        
+        
+</html>

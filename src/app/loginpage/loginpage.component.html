@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <style>
+            body{
+                background-color: rgb(124, 70, 173);
+            }
+            form{
+                text-align: center;              
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                background-color: azure;
+                width: 25%;
+                margin-left: 35%;
+                padding: 45px;
+            }
+            h2{
+                text-align: center;
+                background-color: blue;
+                color: white;
+                width: 100%;
+            }
+            label{
+                font-size: 18px;
+                float: left;
+            }
+        </style>
+    </head>
+    <body>
+        <button type="button" class="btn btn-primary btn-lg" style="font-size:15px;padding:8px;border-radius:10px;margin: 20px;float:right;" (click)="login()">Sign In</button>
+
+        <button type="button" class="btn btn-primary btn-lg" style="font-size:15px;padding: 8px;border-radius:10px;margin: 20px;margin-right:0px;float:right;" (click)="signUp()">Sign Up</button>
+        <div style=" padding-top: 15%;"></div>
+        <form [formGroup]="loginfrm" (ngSubmit)="onSubmit('sqldatapage')" >
+            <h2>Login Page</h2>
+            <label>Username: </label>
+            <input type="text" id="username" formControlName="username"  required  name="username"><br><br>
+            <label>Password: </label>
+            <input type="password" id="password" formControlName="password"  required  name="password"><br><br>
+            {{mess}}
+            <div>
+                <button type="submit" >Login</button>
+                
+            </div>
+        </form>
+    </body>
+</html><!--[ngModel]="username"  [ngModel]="password"  (click)="onSubmit('signup1')"-->

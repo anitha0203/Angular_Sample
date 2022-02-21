@@ -1,0 +1,25 @@
+<!--<html>
+    <head>
+        <style>
+
+        </style>
+    </head>
+    <body>
+        <button (click)='addemployee'>Add Employee</button>
+    </body>
+</html>-->
+
+    <button mat-button [matMenuTriggerFor]="menu"  style="margin:20px;background-color:aquamarine;float:right;">Menu</button>
+<mat-menu #menu="matMenu">
+  <button mat-menu-item (click)='addemployee()' >Add Employee</button>
+ 
+  <button mat-menu-item (click)='deleteemployee()'>Delete Employee</button>
+  </mat-menu>
+  <mat-search-bar [formGroup]="loginfrm" style="float:right;margin:30px;">
+    <input type="text" matInput id="profile" formControlName="profile"  name="profile" >{{profile}}
+  <!--  <mat-autocomplete #auto="matAutocomplete">
+      <mat-option  [value]="profile"></mat-option>
+    </mat-autocomplete>-->
+  </mat-search-bar> 
+  
+  

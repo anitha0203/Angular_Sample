@@ -1,0 +1,97 @@
+<style>
+    body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        background-color: #e5e5e5;
+        font-family: 'Roboto', sans-serif;
+    }
+    
+    .app-header {
+        justify-content: space-between;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 2;
+        box-shadow: 0 3px 5px -1px rgba(0, 0, 0, .2), 0 6px 10px 0 rgba(0, 0, 0, .14), 0 1px 18px 0 rgba(0, 0, 0, .12);
+    }
+    
+    .main-wrapper {
+        height: 80%;
+    }
+    
+    
+    .box {
+        position: relative;
+        top: 0;
+        opacity: 1;
+        float: left;
+        padding: 60px 50px 40px 50px;
+        width: 100%;
+        background: #fff;
+        border-radius: 10px;
+        transform: scale(1);
+        -webkit-transform: scale(1);
+        -ms-transform: scale(1);
+        z-index: 5;
+        max-width: 500px;
+    }
+    
+
+
+    </style>
+
+<ul class="nav">
+    <li class="nav-item">
+      <a class="nav-link active" aria-current="page" routerLink="/library">Books_List</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/addbooks">Add_Books</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/addstudentdetails">Add_Student</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/tookbook">Take_Book</a>
+        </li>
+      </ul>
+    <div class="main-wrapper" fxLayout="row" fxLayoutAlign="center center">
+        <mat-card class="box">
+            <h1 style="text-align: center;font-weight: 500;">Enter Book details</h1><br>
+      
+          <form [formGroup]="loginfrm" (ngSubmit)="onSubmit()">
+            <label>ISBN_Code: </label>
+            <input type="number" id="ISBN_Code" formControlName="ISBN_Code"  required  name="ISBN_Code"><br><br>
+
+            <div style="width:100%;">
+            <div style="width:45%;float:left;">
+            <label>Book_Title: </label>
+            <input type="text" id="Book_Title" formControlName="Book_Title"  required  name="Book_Title">
+            </div>
+            <div style="width:45%;float:right;">
+                
+            <label>Language: </label>
+            <input type="text" id="Language" formControlName="Language"  required  name="Language">
+            </div>
+            </div>
+            <div style="width:100%;"><br><br>
+                <div style="width:45%;float:left;">
+
+            <label>No_Copies_Actual: </label>
+            <input type="number" id="No_Copies_Actual" formControlName="No_Copies_Actual"  required  name="No_Copies_Actual">
+        </div>
+        <div style="width:45%;float:right;">
+            <label>No_Copies_Current: </label>
+            <input type="number" id="No_Copies_Current" formControlName="No_Copies_Current"  required  name="No_Copies_Current">
+            </div>
+            </div><br><br>
+            <label>Publication_year: </label>
+            <input type="number" id="Publication_year" formControlName="Publication_year"  required  name="Publication_year"><br><br>
+      
+            <button mat-stroked-button color="accent" class="btn-block" type="submit">Submit</button>
+      
+          </form>
+        </mat-card>
+      </div>
+    <!--ISBN_Code, Book_Title, Language, No_Copies_Actual, No_Copies_Current, Publication_year-->

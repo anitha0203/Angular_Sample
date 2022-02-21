@@ -1,0 +1,32 @@
+<form #myForm="ngForm" (ngSubmit)="CheckUser()" style="margin-left: 35%;margin-right: 35%;margin-top: 100px;font-size:18px;">
+<!--    Id: 
+    <input type="number" id="id" required [(ngModel)] = "user.id" name="user.id"><br><br>-->
+    <div style="flex-direction: row;width: 100%;">
+     <div style="width:48%;float:left">
+    First name: 
+    <input type="text" id="fname" required [(ngModel)] = "user.fname" name="user.fname"><br><br>
+     </div>
+    <div style="width: 48%;float:right;">
+    Last name: 
+    <input type="text" id="lname" required [(ngModel)] = "user.lname" name="user.lname"><br><br></div>
+    </div>
+    Date of birth: 
+    <input type="date" id="dob" required [(ngModel)] = "user.dob" name="user.dob"><br><br>
+    
+    Address: 
+    <input type="text" id="address" required [(ngModel)] = "user.address" name="user.address"><br><br>
+    <div style="flex-direction: row;width: 100%;">
+     <div style="width:46%;float:left">
+    Designation: 
+    <input type="text" id="designation"  required [(ngModel)] = "user.designation" name="user.designation"><br><br>
+    </div>
+    <div style="width: 50%;height:150px;float:right;">
+    Salary: <br><br>
+    <input type="decimal" id="salary"  required [(ngModel)] = "user.salary" name="user.salary"><br><br>
+    </div></div>
+    <h1>{{message}}</h1><br>
+    <div style="align-items: center;text-align: center;">
+        <button type="submit" class="btn btn-primary"  [disabled]="!myForm.form.valid">Submit</button>
+    </div>
+    
+</form>

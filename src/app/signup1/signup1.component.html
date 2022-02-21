@@ -1,0 +1,106 @@
+<html>
+    <head>
+        <style>
+            div.sm-jumbotron {
+    margin: 0px;
+    padding: 20px;
+    background-color: #38547b;
+    color: #fff;
+}
+button.btn-submit {
+    background-color: #38547b;
+    color: #fff;
+    padding: 5px 10px;
+}
+button.btn-submit:focus,button.btn-submit:hover {
+    background-color: #38547b;
+}
+div.validation-error {
+    color: red;
+}
+form {
+    padding: 20px;
+}
+input.ng-invalid.ng-dirty {
+    border-bottom-color: red !important;
+    box-shadow: 0 1px 0 0 red !important;
+}
+        </style>
+    </head>
+    <body style="margin: 10% 22%;margin-bottom: 0px;;">
+        <div class="row">
+            <div class="col s8 offset-s2">
+                <div class="card">
+                    <div class="sm-jumbotron center-align">
+                       <h1>User Registration</h1>
+                    </div>
+                    <form class="col s12 white" #UserRegistrationForm="ngForm" (ngSubmit)="onSubmit(UserRegistrationForm)" autocomplete="off">
+                        <div class="row" style="padding: 0px 10px;">
+                            <div class="input-field coll s6">
+                                <input type="text" class="validation-error" name="UserName" #UserName="ngModel" [(ngModel)]="user.UserName" required>
+                                <label data-error="Required Field!">User Name</label>
+                            </div>
+                            <div class="input-field coll s6">
+                                <input type="password" class="validation-error" name="Password" #Password="ngModel" [(ngModel)]="user.Password" required minlength="4">
+                                <label>Password</label>
+                            </div>
+                           <!-- <div class="input-field coll s6">
+                                <input type="password" class="validation-error" name="CPassword" #Password="ngModel" [(ngModel)]="user.CPassword" required minlength="4">
+                                <label>Confirm Password</label>
+                            </div>-->
+                        </div>
+                        <div class="row" style="text-align: center;">
+                            <div class="input-field col s12">
+                                <button class="bth-large btn-submit" [disabled]="!UserRegistrationForm.valid" (click)="submit()" type="submit">Submit</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </body>
+</html>
+
+<!--                     <form class="col s12 white" #myForm="ngForm" autocomplete="off">
+                        <div class="row" style="padding: 0px 10px;">
+                            <div class="input-field coll s6">
+                                <input type="text" class="validation-error" required name="username" [(ngModel)]="username" >
+                                <label data-error="Required Field!">User Name</label>
+                            </div>
+                            <div class="input-field coll s6">
+                                <input type="password" class="validation-error" required  name="password" [(ngModel)]="password" minlength="4">
+                                <label>Password</label>
+                            </div>
+                            <div class="input-field coll s6">
+                                <input type="password" class="validation-error" name="CPassword" #Password="ngModel" [(ngModel)]="user.CPassword" required minlength="4">
+                                <label [attr.data-error] = "Password.errors != null?(Password.errors.required? 'Required Field':'Minimum 4 Characters Needed'):''">Confirm Password</label>
+                            </div>
+                        </div>
+                        <div class="row" style="text-align: center;">
+                            <div class="input-field col s12">
+                                <button class="bth-large btn-submit"  [disabled]="!myForm.form.valid" (click)="submit()" type="submit">Submit</button>
+                            </div>
+                        </div>
+                    </form>        
+                                    <form class="col s12 white" #UserRegistrationForm="ngForm" (ngSubmit)="onSubmit(UserRegistrationForm)" autocomplete="off">
+                        <div class="row" style="padding: 0px 10px;">
+                            <div class="input-field coll s6">
+                                <input type="text" class="validation-error" name="UserName" #UserName="ngModel" [(ngModel)]="user.UserName" required>
+                                <label data-error="Required Field!">User Name</label>
+                            </div>
+                            <div class="input-field coll s6">
+                                <input type="password" class="validation-error" name="Password" #Password="ngModel" [(ngModel)]="user.Password" required minlength="4">
+                                <label [attr.data-error] = "Password.errors != null?(Password.errors.required? 'Required Field':'Minimum 4 Characters Needed'):''">Password</label>
+                            </div>
+                            <div class="input-field coll s6">
+                                <input type="password" class="validation-error" name="CPassword" #Password="ngModel" [(ngModel)]="user.CPassword" required minlength="4">
+                                <label [attr.data-error] = "Password.errors != null?(Password.errors.required? 'Required Field':'Minimum 4 Characters Needed'):''">Confirm Password</label>
+                            </div>
+                        </div>
+                        <div class="row" style="text-align: center;">
+                            <div class="input-field col s12">
+                                <button class="bth-large btn-submit" [disabled]="!UserRegistrationForm.valid" (click)="submit()" type="submit">Submit</button>
+                            </div>
+                        </div>
+                    </form>         -->

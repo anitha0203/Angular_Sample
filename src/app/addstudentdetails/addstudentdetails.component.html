@@ -1,0 +1,109 @@
+<style>
+  body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      background-color: #e5e5e5;
+      font-family: 'Roboto', sans-serif;
+  }
+  
+  .app-header {
+      justify-content: space-between;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 2;
+      box-shadow: 0 3px 5px -1px rgba(0, 0, 0, .2), 0 6px 10px 0 rgba(0, 0, 0, .14), 0 1px 18px 0 rgba(0, 0, 0, .12);
+  }
+  
+  .main-wrapper {
+      height: 80%;
+  }
+  
+  
+  .box {
+      position: relative;
+      top: 0;
+      opacity: 1;
+      float: left;
+      padding: 60px 50px 40px 50px;
+      width: 100%;
+      background: #fff;
+      border-radius: 10px;
+      transform: scale(1);
+      -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+      z-index: 5;
+      max-width: 500px;
+  }
+  
+
+
+  </style>
+
+<ul class="nav">
+  <li class="nav-item">
+    <a class="nav-link active" aria-current="page" routerLink="/addbooks">Books_List</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/addbooks">Add_Books</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/addstudentdetails">Add_Student</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/tookbook">Take_Book</a>
+  </li>
+</ul>
+  <div class="main-wrapper" fxLayout="row" fxLayoutAlign="center center">
+      <mat-card class="box">
+        <h1 style="text-align: center;font-weight: 500;">Enter Student details</h1><br>
+        <form [formGroup]="loginfrm" (ngSubmit)="onSubmit()">
+
+          <label>Student_Id: </label>
+          <input type="number" id="Student_Id" formControlName="Student_Id"  required  name="Student_Id"><br><br>
+
+          <label>Student_Name: </label>
+          <input type="text" id="Student_Name" formControlName="Student_Name"  required  name="Student_Name">
+
+          
+          <div style="width:100%;">
+            <div style="width:45%;float:left;">                                                                                              <br>
+              <div class="col-md-12">
+                <label for="validationCustom04" class="form-label" >Gender</label>
+                   <select class="form-select" id="validationCustom04" formControlName="Gender" required>
+                   <option selected disabled value="">Choose...</option>
+                   <option>Male</option>
+                   <option>Female</option>
+                 </select>
+              </div>
+            </div>
+          
+           <div style="width:45%;float:right;">
+             <label style="padding-top: 20px;float: left;">Date_Of_Birth: </label>
+             <input type="date" id="Date_Of_Birth" formControlName="Date_Of_Birth"  required  name="Date_Of_Birth">
+           </div>
+         </div>
+
+          <label style="padding-top: 10px;">Borrower_Id: </label>
+          <input type="number" id="Borrower_Id" formControlName="Borrower_Id"  required  name="Borrower_Id"><br><br>
+
+      <div style="width:100%;">
+      <div style="width:45%;float:left;">
+        
+        <label>Department: </label>
+        <input type="text" id="Department" formControlName="Department"  required  name="Department">
+          </div>
+          <div style="width:45%;float:right;">
+          <label>contact_Number: </label>
+          <input type="number" id="contact_Number" formControlName="contact_Number"  required  name="contact_Number"><br><br>
+      </div>
+    </div>
+    
+          <button mat-stroked-button color="accent" class="btn-block" type="submit">Submit</button>
+    
+        </form>
+      </mat-card>
+    </div>
+    <!--Student_Id, Student_Name, Gender, Date_Of_Birth, Borrower_Id, Department, contact_Number-->
